@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>
+hhhs</title>
+</head>
+<body>
+<form name="reg_form" action="" method="POST" onsubmit="return RegistrationForm()">
+<table align="center" border="2">
+<tr>
+<th colspan="3">REGISTRATION FORM </th>
+</tr>
+<tr>
+<td>NAME</td>
+<td colspan="2"><input type="text" name="name"></td>
+</tr>
+<tr>
+<td>AGE</td>
+<td colspan="2">
+<select>
+<option>SELECT</option>
+<option>13</option>
+<option>14</option>
+
+
+</select>
+</td>
+</tr>
+<tr>
+<td>PASSWORD</td>
+<td colspan="2"><input type="password" name="password"></td>
+</tr>
+<tr>
+<td>RETYPE PASSWORD</td>
+<td colspan="2"><input type="password" name="re_name"></td>
+</tr>
+<tr>
+<td>SELECT YOUR STREAM</td>
+<td><input type="radio" name="security">mca
+<input type="radio" name="security">mtech</td>
+</tr>
+
+
+
+<tr>
+<td>EMAIL ID</td>
+<td colspan="2"><input type="email" name="email"> </td>
+</tr>
+<tr>
+<td>LANGUAGES KNOWNS</td>
+<td>
+<input type="checkbox">MALAYALAM
+<input type="checkbox">ENGLISH
+<input type="checkbox">HINDI
+</td>
+</tr>
+<tr>
+<td>PHONE NUMBER</td>
+<td colspan="2"><input type="text" name="phone"> </td>
+
+
+</tr>
+<tr>
+<td>UPLOAD CV</td>
+<td colspan="2"><input type="file"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><input type="reset" style="background-color:
+red;color:white; padding: 6px 12px; border: 1px solid transparent;"></td>
+<td colspan="2" style="text-align: center;"><input type="submit"
+style="background-color: green;color:white; padding: 6px 12px; border: 1px solid
+transparent;"></td>
+</tr>
+</table>
+</form>
+<script>
+         function RegistrationForm() {
+         var name = document.reg_form.name.value;
+         var password = document.reg_form.password.value;
+         var re_name = document.reg_form.re_name.value;
+
+         
+         var email = document.reg_form.email.value;
+         var phone = document.reg_form.phone.value;
+         var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+         var ren = /[0-9!@#$%^&*]/
+         var qw = /^(?=.*\d)(?=.*[a-z])(?=.*[@])(?=.*[gmail])(?=.*[.])(?=.*[com])/
+         if (name == "") {
+         alert("Enter First Name !!");
+         document.reg_form.name.focus();
+         return false;
+         }
+         else if(ren.test(name)){
+         alert("Enter Valid Name !!");
+         document.reg_form.name.focus();
+         return false;
+         
+         }
+         if (password == "" || password.length < 8 || !re.test(password)) {
+         alert("Enter minimum 8 digit Password !!" + '\n' + "Atleast one Lowercase &uppercase & digti & special charecter must be included");
+         document.reg_form.password.focus();
+         return false;
+         }
+         
+         
+         if (re_name == "") {
+         alert("Enter retype password !!");
+         document.reg_form.re_name.focus();
+         return false;
+         }
+         else if(ren.test(re_name)){
+         alert("The password did not match !!");
+         document.reg_form.re_name.focus();
+         return false;
+         
+         }
+        
+         if (email == "") {
+         alert("Enter email!!");
+         document.reg_form.email.focus();
+         return false;
+         }
+         
+         else if(qw.test(email)){
+         alert("Enter Valid mail id !!");
+         document.reg_form.email.focus();
+         return false;
+         }
+         if (phone == "") {
+         alert("Enter Mobile number");
+         return false;
+         }
+         else if (isNaN(phone)) {
+         alert("Enter valid Mobile number");
+         return false;
+         }
+         else if (phone.length != 10) {
+         alert("Enter Mobile number with 10 digit");
+         return false;
+         
+        
+         }
+         }
+      </script>
+   </body>
+</html>
+
+</body>
+</html>
